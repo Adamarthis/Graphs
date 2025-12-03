@@ -99,7 +99,7 @@ class Program
 
             if (distances[i] != int.MaxValue)
             {
-                string path = ReconstructPath(previous, startNodeIndex, i, nodes);
+                string path = ReconstructPath(previous, i, nodes);
                 Console.WriteLine($"До {nodes[i]}: {distances[i],-3} (шлях: {path})");
             }
             else
@@ -110,7 +110,7 @@ class Program
         Console.WriteLine(new string('-', 30));
     }
 
-    static string ReconstructPath(int[] previous, int start, int end, string[] labels)
+    static string ReconstructPath(int[] previous, int end, string[] labels)
     {
         var pathList = new List<string>();
         int current = end;
